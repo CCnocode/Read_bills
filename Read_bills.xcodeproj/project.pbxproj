@@ -8,6 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		4228A5A9289CD014008A42A6 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4228A5A8289CD014008A42A6 /* LoginViewController.swift */; };
+		422EEAFD289EAAB90015CC71 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 422EEAFC289EAAB90015CC71 /* AboutViewController.swift */; };
+		422EEB00289ED9B90015CC71 /* GuideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 422EEAFF289ED9B90015CC71 /* GuideViewController.swift */; };
+		422EEB02289EF4A40015CC71 /* GuideDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 422EEB01289EF4A40015CC71 /* GuideDetailViewController.swift */; };
+		422EEB05289FE6260015CC71 /* LocalState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 422EEB04289FE6260015CC71 /* LocalState.swift */; };
+		422EEB0928A14F940015CC71 /* TabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 422EEB0828A14F940015CC71 /* TabViewController.swift */; };
 		423A2108289AD0700097C4D8 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 423A2107289AD0700097C4D8 /* LoginView.swift */; };
 		42E0A7B02899EE1A00108E99 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42E0A7AF2899EE1A00108E99 /* AppDelegate.swift */; };
 		42E0A7B42899EE1A00108E99 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42E0A7B32899EE1A00108E99 /* MainViewController.swift */; };
@@ -17,6 +22,11 @@
 
 /* Begin PBXFileReference section */
 		4228A5A8289CD014008A42A6 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		422EEAFC289EAAB90015CC71 /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
+		422EEAFF289ED9B90015CC71 /* GuideViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuideViewController.swift; sourceTree = "<group>"; };
+		422EEB01289EF4A40015CC71 /* GuideDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuideDetailViewController.swift; sourceTree = "<group>"; };
+		422EEB04289FE6260015CC71 /* LocalState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalState.swift; sourceTree = "<group>"; };
+		422EEB0828A14F940015CC71 /* TabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabViewController.swift; sourceTree = "<group>"; };
 		423A2107289AD0700097C4D8 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		42E0A7AC2899EE1A00108E99 /* Read_bills.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Read_bills.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		42E0A7AF2899EE1A00108E99 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -37,6 +47,39 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		422EEAFB289EAA990015CC71 /* About View */ = {
+			isa = PBXGroup;
+			children = (
+				422EEAFC289EAAB90015CC71 /* AboutViewController.swift */,
+			);
+			path = "About View";
+			sourceTree = "<group>";
+		};
+		422EEAFE289ED9710015CC71 /* Guide pages */ = {
+			isa = PBXGroup;
+			children = (
+				422EEAFF289ED9B90015CC71 /* GuideViewController.swift */,
+				422EEB01289EF4A40015CC71 /* GuideDetailViewController.swift */,
+			);
+			path = "Guide pages";
+			sourceTree = "<group>";
+		};
+		422EEB03289FE60C0015CC71 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				422EEB04289FE6260015CC71 /* LocalState.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		422EEB0728A14F470015CC71 /* TabView */ = {
+			isa = PBXGroup;
+			children = (
+				422EEB0828A14F940015CC71 /* TabViewController.swift */,
+			);
+			path = TabView;
+			sourceTree = "<group>";
+		};
 		423A2106289AD0450097C4D8 /* Login */ = {
 			isa = PBXGroup;
 			children = (
@@ -65,6 +108,10 @@
 		42E0A7AE2899EE1A00108E99 /* Read_bills */ = {
 			isa = PBXGroup;
 			children = (
+				422EEB0728A14F470015CC71 /* TabView */,
+				422EEB03289FE60C0015CC71 /* Utils */,
+				422EEAFE289ED9710015CC71 /* Guide pages */,
+				422EEAFB289EAA990015CC71 /* About View */,
 				423A2106289AD0450097C4D8 /* Login */,
 				42E0A7AF2899EE1A00108E99 /* AppDelegate.swift */,
 				42E0A7B32899EE1A00108E99 /* MainViewController.swift */,
@@ -148,7 +195,12 @@
 				4228A5A9289CD014008A42A6 /* LoginViewController.swift in Sources */,
 				423A2108289AD0700097C4D8 /* LoginView.swift in Sources */,
 				42E0A7B42899EE1A00108E99 /* MainViewController.swift in Sources */,
+				422EEAFD289EAAB90015CC71 /* AboutViewController.swift in Sources */,
 				42E0A7B02899EE1A00108E99 /* AppDelegate.swift in Sources */,
+				422EEB00289ED9B90015CC71 /* GuideViewController.swift in Sources */,
+				422EEB0928A14F940015CC71 /* TabViewController.swift in Sources */,
+				422EEB02289EF4A40015CC71 /* GuideDetailViewController.swift in Sources */,
+				422EEB05289FE6260015CC71 /* LocalState.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
