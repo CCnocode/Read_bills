@@ -18,6 +18,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UITabBarControllerDelegat
     let About_vc = AboutViewController()
     let TabView_vc = TabViewController()
     
+    //var Profile_vc = ProfileView()
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
         window = UIWindow(frame: UIScreen.main.bounds)
@@ -27,14 +29,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UITabBarControllerDelegat
         
         //sent the delegate to the GuideOverall
         if LocalState.LoginSuccess{
-            About_vc.delegate = self
-            TabView_vc.About_delegate = About_vc.delegate
+            TabView_vc.Logout_delegate = self
             setRootViewController(TabView_vc)
         } else{
             let start_vc = GuideShow_vc
             
             start_vc.delegate = self
-            
             window?.rootViewController = start_vc
         }
         
@@ -46,10 +46,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UITabBarControllerDelegat
 extension AppDelegate{
     func setRootViewController(_ vc: UIViewController, animated: Bool = true){
         guard animated, let window = self.window else{
+            vc.viewDidLoad()
             self.window?.rootViewController = vc
             self.window?.makeKeyAndVisible()
             return
         }
+        vc.viewDidLoad()
         window.rootViewController = vc
         window.makeKeyAndVisible()
         UIView.transition(with: window, duration: 0.5, options: .transitionCrossDissolve, animations: nil, completion: nil)
@@ -68,14 +70,17 @@ extension AppDelegate:LoginViewControllerDelegate{
     func didLoginSuccess() {
         //user login status
         LocalState.LoginSuccess = true
-        About_vc.delegate = self
-        TabView_vc.About_delegate = About_vc.delegate
-        setRootViewController(TabView_vc)
+        TabView_vc.Logout_delegate = self
+        
+        UIAlertController.showAlert(message: "Login Successful", in: Login_vc)
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1) {
+            self.setRootViewController(self.TabView_vc)
+        }
         print("User Login Successful")
     }
 }
 
-extension AppDelegate: AboutViewControllerDelegate{
+extension AppDelegate: ProfileViewDelegate{
     func didLogout() {
         //user logout
         LocalState.LoginSuccess = false
@@ -84,3 +89,10 @@ extension AppDelegate: AboutViewControllerDelegate{
     }
 }
 
+extension UIAlertController{
+    static func showAlert(message: String, in viewController:UIViewController){
+        let alert = UIAlertController(title: nil, message: message, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Confirm", style: .cancel))
+        viewController.present(alert, animated: true)
+    }
+}

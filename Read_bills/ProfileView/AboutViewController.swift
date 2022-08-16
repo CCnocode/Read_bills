@@ -117,4 +117,3 @@ extension AboutViewController{
         self.delegate?.didLogout()
     }
 }
-

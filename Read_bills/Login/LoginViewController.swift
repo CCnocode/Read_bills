@@ -33,12 +33,11 @@ class LoginViewController: UIViewController{
     //add regist btn
     let btnRegist = UIButton(type: .system)
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         //view.backgroundColor = .white
-        view.layer.contents = UIImage(named: "London")?.cgImage
+        view.layer.contents = UIImage(named: "login")?.cgImage
         
         _loginview()
         _lbltitle()
@@ -53,6 +52,8 @@ extension LoginViewController{
     func _loginview(){
         loginView.translatesAutoresizingMaskIntoConstraints = false
         // add loginView UI
+        loginView.TxtUsername.text = ""
+        loginView.TxtPassword.text = ""
         view.addSubview(loginView)
         
         //add constrain for login View
@@ -104,6 +105,7 @@ extension LoginViewController{
         btnRegist.configuration?.imagePadding = 10
         btnRegist.layer.cornerRadius = 20
         btnRegist.setTitle("Create Account", for: [])
+        btnRegist.setTitleColor(UIColor .white, for: [])
         btnRegist.addTarget(self, action: #selector(btnRegist_Tapped), for: .primaryActionTriggered)
         
         //add to view
@@ -141,7 +143,7 @@ extension LoginViewController{
         lblTitle.textAlignment = .center
         lblTitle.font = UIFont.preferredFont(forTextStyle: .largeTitle)
         lblTitle.adjustsFontForContentSizeCategory = true
-        lblTitle.text = "User Login"
+        lblTitle.text = "Welcome"
         
         view.addSubview(lblTitle)
         NSLayoutConstraint.activate([
@@ -181,7 +183,6 @@ extension LoginViewController{
         
         DispatchQueue.global().async {
             DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 3){
-                
                 self.btnLogin.configuration?.showsActivityIndicator = false
                 self.btnLogin.setTitle("Sign In", for: [])
                 //Successful user login
@@ -189,6 +190,7 @@ extension LoginViewController{
                     //hunman addcdelay
                     self.delegate?.didLoginSuccess()
                 } else{
+                    UIAlertController.showAlert(message: "Account Incorrect!", in: self)
                     self.lblMessage.isHidden = false
                     self.lblMessage.text = "Login Faild"
                     return
@@ -222,15 +224,17 @@ extension LoginViewController{
         
         
         DispatchQueue.global().async {
-            DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 3){
+            DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 2){
                 
                 self.btnRegist.configuration?.showsActivityIndicator = false
                 //Successful create
                 if self.status{
                     //hunman addcdelay
+                    UIAlertController.showAlert(message: "Account Create Successful", in: self)
                     self.lblMessage.isHidden = false
                     self.lblMessage.text = "Acount create successful"
                 } else{
+                    UIAlertController.showAlert(message: "Account Exist!!!", in: self)
                     self.lblMessage.isHidden = false
                     self.lblMessage.text = "Acount has already exist"
                     return
@@ -259,14 +263,19 @@ extension LoginViewController{
             }
 
             //print("response = \(String(describing: response))")
-
             let responseString = NSString(data: data!, encoding: String.Encoding.utf8.rawValue)
             print("responseString = \(String(describing: responseString!))")
             
-            let obj: String = responseString! as String
-
-            if obj == "true"{
+            let response = responseString!.components(separatedBy: ",")
+            //let obj: String = responseString! as String
+            
+            if response[0] == "true"{
                 self.status = true
+                LocalState.username = ID
+                LocalState.First_name = response[1]
+                LocalState.Last_name = response[2]
+                LocalState.Address = response[3]
+                LocalState.PostCode = response[4]
             } else{
                 self.status = false
             }

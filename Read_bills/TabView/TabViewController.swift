@@ -6,14 +6,15 @@
 //
 
 import UIKit
+import SwiftUI
 
-class TabViewController: UITabBarController,AboutViewControllerDelegate{
+class TabViewController: UITabBarController,ProfileViewDelegate{
     func didLogout() {
         print("come in")
-        About_delegate?.didLogout()
+        Logout_delegate?.didLogout()
     }
 
-    weak var About_delegate: AboutViewControllerDelegate?
+    weak var Logout_delegate: ProfileViewDelegate?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,30 +23,30 @@ class TabViewController: UITabBarController,AboutViewControllerDelegate{
         setStatusBar()
         
         //view controller
-        let vc1 = TabDetailViewController(tabTitle: "1", bgColor: .systemYellow)
-        let vc2 = TabDetailViewController(tabTitle: "2", bgColor: .systemTeal)
-        let vc3 = TabDetailViewController(tabTitle: "3", bgColor: .systemBlue)
-        //let vc4 = TabDetailViewController(tabTitle: "4", bgColor: .systemMint)
-        let vc4 = AboutViewController()
-        vc4.delegate = self
+        //let vc1 = TabDetailViewController(tabTitle: "1", bgColor: .systemYellow)
+        let vc1 = PieChartViewController()
+        let vc2 = TabDetailViewController(tabTitle: "Upload", bgColor: .systemTeal)
         
-        vc1.tabBarItem = UITabBarItem(tabBarSystemItem: .mostRecent, tag: 0)
-        vc2.tabBarItem = UITabBarItem(tabBarSystemItem: .contacts, tag: 1)
-        vc3.tabBarItem = UITabBarItem(tabBarSystemItem: .search, tag: 2)
-        vc4.tabBarItem = UITabBarItem(tabBarSystemItem: .more, tag: 3)
+        var temp = ProfileView(First_name:LocalState.First_name, Last_name:LocalState.Last_name, Address:LocalState.Address, PostCode:LocalState.PostCode);
+        temp.delegate = self
+        let vc3 = UIHostingController(rootView: temp)
+        //vc3.delegate = self
+         
+        vc1.tabBarItem = UITabBarItem(title: "Data", image: UIImage(named: "show")?.withRenderingMode(.alwaysOriginal), tag: 0)
+        vc2.tabBarItem = UITabBarItem(title: "Upload", image: UIImage(named: "upload")?.withRenderingMode(.alwaysOriginal), tag: 1)
+        vc3.tabBarItem = UITabBarItem(title: "User", image: UIImage(named: "user")?.withRenderingMode(.alwaysOriginal), tag: 2)
+        
         
         let nc1 = UINavigationController(rootViewController: vc1)
         let nc2 = UINavigationController(rootViewController: vc2)
         let nc3 = UINavigationController(rootViewController: vc3)
-        let nc4 = UINavigationController(rootViewController: vc4)
         
         nc1.navigationBar.backgroundColor = UIColor(red: 242/255, green: 247/255, blue: 247/255, alpha: 1)
         nc2.navigationBar.backgroundColor = UIColor(red: 242/255, green: 247/255, blue: 247/255, alpha: 1)
         nc3.navigationBar.backgroundColor = UIColor(red: 242/255, green: 247/255, blue: 247/255, alpha: 1)
-        nc4.navigationBar.backgroundColor = UIColor(red: 242/255, green: 247/255, blue: 247/255, alpha: 1)
         
         tabBar.backgroundColor = UIColor(red: 242/255, green: 247/255, blue: 247/255, alpha: 1)
-        self.viewControllers = [nc1,nc2,nc3,nc4]
+        self.viewControllers = [nc1,nc2,nc3]
         
     }
     
