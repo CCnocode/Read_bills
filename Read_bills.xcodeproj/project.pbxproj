@@ -9,7 +9,13 @@
 /* Begin PBXBuildFile section */
 		4211650C28AAFEAF00329D38 /* ProfileImageMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4211650B28AAFEAF00329D38 /* ProfileImageMode.swift */; };
 		4211650E28AAFF7300329D38 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4211650D28AAFF7300329D38 /* ImagePicker.swift */; };
-		4211651128AC1BAC00329D38 /* UploadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4211651028AC1BAC00329D38 /* UploadViewController.swift */; };
+		4211651328AC2BCE00329D38 /* UploadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4211651228AC2BCE00329D38 /* UploadView.swift */; };
+		4211651628AC326F00329D38 /* FirebaseRemoteConfig in Frameworks */ = {isa = PBXBuildFile; productRef = 4211651528AC326F00329D38 /* FirebaseRemoteConfig */; };
+		4211651828AC326F00329D38 /* FirebaseRemoteConfigSwift-Beta in Frameworks */ = {isa = PBXBuildFile; productRef = 4211651728AC326F00329D38 /* FirebaseRemoteConfigSwift-Beta */; };
+		4211651A28AC326F00329D38 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 4211651928AC326F00329D38 /* FirebaseStorage */; };
+		4211651C28AC326F00329D38 /* FirebaseStorageCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = 4211651B28AC326F00329D38 /* FirebaseStorageCombine-Community */; };
+		4211651E28AC326F00329D38 /* FirebaseStorageSwift-Beta in Frameworks */ = {isa = PBXBuildFile; productRef = 4211651D28AC326F00329D38 /* FirebaseStorageSwift-Beta */; };
+		4211652028AC339500329D38 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4211651F28AC339500329D38 /* GoogleService-Info.plist */; };
 		4228A5A9289CD014008A42A6 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4228A5A8289CD014008A42A6 /* LoginViewController.swift */; };
 		422EEAFD289EAAB90015CC71 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 422EEAFC289EAAB90015CC71 /* AboutViewController.swift */; };
 		422EEB00289ED9B90015CC71 /* GuideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 422EEAFF289ED9B90015CC71 /* GuideViewController.swift */; };
@@ -29,7 +35,8 @@
 /* Begin PBXFileReference section */
 		4211650B28AAFEAF00329D38 /* ProfileImageMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileImageMode.swift; sourceTree = "<group>"; };
 		4211650D28AAFF7300329D38 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
-		4211651028AC1BAC00329D38 /* UploadViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadViewController.swift; sourceTree = "<group>"; };
+		4211651228AC2BCE00329D38 /* UploadView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UploadView.swift; sourceTree = "<group>"; };
+		4211651F28AC339500329D38 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		4228A5A8289CD014008A42A6 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		422EEAFC289EAAB90015CC71 /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 		422EEAFF289ED9B90015CC71 /* GuideViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuideViewController.swift; sourceTree = "<group>"; };
@@ -53,6 +60,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				4254EC6C28A42A1C008E32B4 /* Charts in Frameworks */,
+				4211651A28AC326F00329D38 /* FirebaseStorage in Frameworks */,
+				4211651C28AC326F00329D38 /* FirebaseStorageCombine-Community in Frameworks */,
+				4211651828AC326F00329D38 /* FirebaseRemoteConfigSwift-Beta in Frameworks */,
+				4211651628AC326F00329D38 /* FirebaseRemoteConfig in Frameworks */,
+				4211651E28AC326F00329D38 /* FirebaseStorageSwift-Beta in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -62,7 +74,7 @@
 		4211650F28AC1B7A00329D38 /* Upload */ = {
 			isa = PBXGroup;
 			children = (
-				4211651028AC1BAC00329D38 /* UploadViewController.swift */,
+				4211651228AC2BCE00329D38 /* UploadView.swift */,
 			);
 			name = Upload;
 			sourceTree = "<group>";
@@ -139,6 +151,7 @@
 		42E0A7AE2899EE1A00108E99 /* Read_bills */ = {
 			isa = PBXGroup;
 			children = (
+				4211651F28AC339500329D38 /* GoogleService-Info.plist */,
 				4211650F28AC1B7A00329D38 /* Upload */,
 				4254EC6428A42797008E32B4 /* ChartView */,
 				422EEB0728A14F470015CC71 /* TabView */,
@@ -173,6 +186,11 @@
 			name = Read_bills;
 			packageProductDependencies = (
 				4254EC6B28A42A1C008E32B4 /* Charts */,
+				4211651528AC326F00329D38 /* FirebaseRemoteConfig */,
+				4211651728AC326F00329D38 /* FirebaseRemoteConfigSwift-Beta */,
+				4211651928AC326F00329D38 /* FirebaseStorage */,
+				4211651B28AC326F00329D38 /* FirebaseStorageCombine-Community */,
+				4211651D28AC326F00329D38 /* FirebaseStorageSwift-Beta */,
 			);
 			productName = Read_bills;
 			productReference = 42E0A7AC2899EE1A00108E99 /* Read_bills.app */;
@@ -204,6 +222,7 @@
 			mainGroup = 42E0A7A32899EE1A00108E99;
 			packageReferences = (
 				4254EC6A28A42A1C008E32B4 /* XCRemoteSwiftPackageReference "Charts" */,
+				4211651428AC326F00329D38 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 			);
 			productRefGroup = 42E0A7AD2899EE1A00108E99 /* Products */;
 			projectDirPath = "";
@@ -221,6 +240,7 @@
 			files = (
 				42E0A7BC2899EE1C00108E99 /* LaunchScreen.storyboard in Resources */,
 				42E0A7B92899EE1C00108E99 /* Assets.xcassets in Resources */,
+				4211652028AC339500329D38 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -232,7 +252,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				4211650E28AAFF7300329D38 /* ImagePicker.swift in Sources */,
-				4211651128AC1BAC00329D38 /* UploadViewController.swift in Sources */,
 				4228A5A9289CD014008A42A6 /* LoginViewController.swift in Sources */,
 				423A2108289AD0700097C4D8 /* LoginView.swift in Sources */,
 				42E0A7B42899EE1A00108E99 /* MainViewController.swift in Sources */,
@@ -243,6 +262,7 @@
 				4254EC6628A427DD008E32B4 /* PieChartViewController.swift in Sources */,
 				422EEB0928A14F940015CC71 /* TabViewController.swift in Sources */,
 				422EEB02289EF4A40015CC71 /* GuideDetailViewController.swift in Sources */,
+				4211651328AC2BCE00329D38 /* UploadView.swift in Sources */,
 				4254EC6E28A4730D008E32B4 /* ProfileView.swift in Sources */,
 				422EEB05289FE6260015CC71 /* LocalState.swift in Sources */,
 			);
@@ -454,6 +474,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		4211651428AC326F00329D38 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 8.0.0;
+			};
+		};
 		4254EC6A28A42A1C008E32B4 /* XCRemoteSwiftPackageReference "Charts" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/danielgindi/Charts.git";
@@ -465,6 +493,31 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		4211651528AC326F00329D38 /* FirebaseRemoteConfig */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4211651428AC326F00329D38 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseRemoteConfig;
+		};
+		4211651728AC326F00329D38 /* FirebaseRemoteConfigSwift-Beta */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4211651428AC326F00329D38 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = "FirebaseRemoteConfigSwift-Beta";
+		};
+		4211651928AC326F00329D38 /* FirebaseStorage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4211651428AC326F00329D38 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseStorage;
+		};
+		4211651B28AC326F00329D38 /* FirebaseStorageCombine-Community */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4211651428AC326F00329D38 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = "FirebaseStorageCombine-Community";
+		};
+		4211651D28AC326F00329D38 /* FirebaseStorageSwift-Beta */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4211651428AC326F00329D38 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = "FirebaseStorageSwift-Beta";
+		};
 		4254EC6B28A42A1C008E32B4 /* Charts */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 4254EC6A28A42A1C008E32B4 /* XCRemoteSwiftPackageReference "Charts" */;

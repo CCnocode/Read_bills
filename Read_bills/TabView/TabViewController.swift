@@ -25,11 +25,13 @@ class TabViewController: UITabBarController,ProfileViewDelegate{
         //view controller
         //let vc1 = TabDetailViewController(tabTitle: "1", bgColor: .systemYellow)
         let vc1 = PieChartViewController()
-        let vc2 = TabDetailViewController(tabTitle: "Upload", bgColor: .systemTeal)
         
-        var temp = ProfileView(First_name:LocalState.First_name, Last_name:LocalState.Last_name, Address:LocalState.Address, PostCode:LocalState.PostCode);
-        temp.delegate = self
-        let vc3 = UIHostingController(rootView: temp)
+        let temp_2 = UploadView()
+        let vc2 = UIHostingController(rootView: temp_2)
+        
+        var temp_3 = ProfileView(First_name:LocalState.First_name, Last_name:LocalState.Last_name, Address:LocalState.Address, PostCode:LocalState.PostCode);
+        temp_3.delegate = self
+        let vc3 = UIHostingController(rootView: temp_3)
         //vc3.delegate = self
          
         vc1.tabBarItem = UITabBarItem(title: "Data", image: UIImage(named: "show")?.withRenderingMode(.alwaysOriginal), tag: 0)
@@ -65,23 +67,4 @@ class TabViewController: UITabBarController,ProfileViewDelegate{
         view.addSubview(statusbarView)
     }
     
-}
-
-class TabDetailViewController: UIViewController{
-    let _title: String
-    let _bgColor: UIColor
-    init(tabTitle:String, bgColor:UIColor = .white){
-        self._title = tabTitle
-        self._bgColor = bgColor
-        super.init(nibName: nil, bundle: nil)
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
-    override func viewDidLoad() {
-        self.title = self._title
-        view.backgroundColor = self._bgColor
-    }
 }

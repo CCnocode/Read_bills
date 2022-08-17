@@ -6,6 +6,9 @@
 //
 
 import UIKit
+import Firebase
+import SwiftUI
+import FirebaseStorage
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate, UITabBarControllerDelegate {
@@ -22,6 +25,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UITabBarControllerDelegat
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
+        FirebaseApp.configure()
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.makeKeyAndVisible()
         window?.backgroundColor = .white
@@ -29,8 +33,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UITabBarControllerDelegat
         
         //sent the delegate to the GuideOverall
         if LocalState.LoginSuccess{
-            TabView_vc.Logout_delegate = self
-            setRootViewController(TabView_vc)
+            //TabView_vc.Logout_delegate = self
+            let temp = UploadView()
+            let obj = UIHostingController(rootView: temp)
+            
+            setRootViewController(obj)
         } else{
             let start_vc = GuideShow_vc
             
