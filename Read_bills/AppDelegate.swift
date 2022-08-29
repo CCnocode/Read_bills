@@ -33,11 +33,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UITabBarControllerDelegat
         
         //sent the delegate to the GuideOverall
         if LocalState.LoginSuccess{
-            //TabView_vc.Logout_delegate = self
-            let temp = UploadView()
-            let obj = UIHostingController(rootView: temp)
+            TabView_vc.Logout_delegate = self
             
-            setRootViewController(obj)
+            //let temp = BillsTracker()
+            //let obj = UIHostingController(rootView: temp)
+            
+            setRootViewController(TabView_vc)
         } else{
             let start_vc = GuideShow_vc
             

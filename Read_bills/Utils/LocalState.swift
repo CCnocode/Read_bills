@@ -78,4 +78,5 @@ public class LocalState{
             UserDefaults.standard.synchronize()
         }
     }
+    
 }

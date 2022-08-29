@@ -29,6 +29,15 @@
         }
       },
       {
+        "package": "SwiftUICharts",
+        "repositoryURL": "https://github.com/AppPear/ChartView",
+        "state": {
+          "branch": null,
+          "revision": "caa75ecbc0d68f2b50d714909566406f80214186",
+          "version": "2.0.0-beta.2"
+        }
+      },
+      {
         "package": "Firebase",
         "repositoryURL": "https://github.com/firebase/firebase-ios-sdk",
         "state": {
@@ -119,6 +128,15 @@
         }
       },
       {
+        "package": "swift-collections",
+        "repositoryURL": "https://github.com/apple/swift-collections.git",
+        "state": {
+          "branch": null,
+          "revision": "48254824bb4248676bf7ce56014ff57b142b77eb",
+          "version": "1.0.2"
+        }
+      },
+      {
         "package": "swift-numerics",
         "repositoryURL": "https://github.com/apple/swift-numerics",
         "state": {
@@ -134,6 +152,15 @@
           "branch": null,
           "revision": "fa0fcd43f272a260e7f734f23e6dc55e16fcae0a",
           "version": "1.19.1"
+        }
+      },
+      {
+        "package": "SwiftUIFontIcon",
+        "repositoryURL": "https://github.com/huybuidac/SwiftUIFontIcon",
+        "state": {
+          "branch": "master",
+          "revision": "4f170fbf443d985ae518a14a12ec8194ec6b08eb",
+          "version": null
         }
       }
     ]

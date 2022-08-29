@@ -105,12 +105,12 @@ extension GuideViewDetailController{
         //Choose a image in the Assets
         let showImg = UIImage(named: self.showImage)
         imgLogo.translatesAutoresizingMaskIntoConstraints = false
-        imgLogo.contentMode = .scaleAspectFit
+        //imgLogo.contentMode = .scaleAspectFit
         imgLogo.image = showImg
         
         imgLogo.layer.borderColor = UIColor(red:52/255, green: 52/255, blue: 89/255, alpha: 1).cgColor
         
-        imgLogo.layer.borderWidth = 10
+        imgLogo.layer.borderWidth = 2
         
         stackView.addArrangedSubview(imgLogo)
         

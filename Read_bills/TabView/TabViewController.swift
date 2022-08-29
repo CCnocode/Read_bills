@@ -24,7 +24,9 @@ class TabViewController: UITabBarController,ProfileViewDelegate{
         
         //view controller
         //let vc1 = TabDetailViewController(tabTitle: "1", bgColor: .systemYellow)
-        let vc1 = PieChartViewController()
+        let temp_1 = BillsTracker()
+        let vc1 = UIHostingController(rootView: temp_1)
+        
         
         let temp_2 = UploadView()
         let vc2 = UIHostingController(rootView: temp_2)
@@ -39,16 +41,17 @@ class TabViewController: UITabBarController,ProfileViewDelegate{
         vc3.tabBarItem = UITabBarItem(title: "User", image: UIImage(named: "user")?.withRenderingMode(.alwaysOriginal), tag: 2)
         
         
-        let nc1 = UINavigationController(rootViewController: vc1)
-        let nc2 = UINavigationController(rootViewController: vc2)
-        let nc3 = UINavigationController(rootViewController: vc3)
+        //let nc1 = UINavigationController(rootViewController: vc1)
+        //let nc2 = UINavigationController(rootViewController: vc2)
+        //let nc3 = UINavigationController(rootViewController: vc3)
         
-        nc1.navigationBar.backgroundColor = UIColor(red: 242/255, green: 247/255, blue: 247/255, alpha: 1)
-        nc2.navigationBar.backgroundColor = UIColor(red: 242/255, green: 247/255, blue: 247/255, alpha: 1)
-        nc3.navigationBar.backgroundColor = UIColor(red: 242/255, green: 247/255, blue: 247/255, alpha: 1)
+        //nc1.navigationBar.backgroundColor = UIColor(red: 242/255, green: 247/255, blue: 247/255, alpha: 1)
+        //nc2.navigationBar.backgroundColor = UIColor(red: 242/255, green: 247/255, blue: 247/255, alpha: 1)
+        //nc3.navigationBar.backgroundColor = UIColor(red: 242/255, green: 247/255, blue: 247/255, alpha: 1)
         
         tabBar.backgroundColor = UIColor(red: 242/255, green: 247/255, blue: 247/255, alpha: 1)
-        self.viewControllers = [nc1,nc2,nc3]
+        
+        self.viewControllers = [vc1,vc2,vc3]
         
     }
     

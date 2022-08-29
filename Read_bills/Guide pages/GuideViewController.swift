@@ -24,10 +24,10 @@ class GuideViewController: UIViewController{
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         self.pageViewController = UIPageViewController(transitionStyle: .scroll, navigationOrientation: .horizontal, options: nil)
         
-        let page1 = GuideViewDetailController(imageName: "Step1", content: "Guide for Step1")
-        let page2 = GuideViewDetailController(imageName: "Step2", content: "Guide for Step2")
-        let page3 = GuideViewDetailController(imageName: "Step3", content: "Guide for Step3")
-        let page4 = GuideViewDetailController(imageName: "Step4", content: "Guide for Step4", showClose: true)
+        let page1 = GuideViewDetailController(imageName: "Step1", content: "If you are a new user using this app for the first time, please register your own account. After the registration is successful, click the Login button to enter the main interface.")
+        let page2 = GuideViewDetailController(imageName: "Step2", content: "The second page is about user profile info, where you can enter your personal info and current address.")
+        let page3 = GuideViewDetailController(imageName: "Step3", content: "You can choose to upload your bills on the upload page. There are two ways to upload the bill: file upload and album upload.")
+        let page4 = GuideViewDetailController(imageName: "Step4", content: "The final data page shows all the bill info of user. Click refresh to update the latest data at any time.", showClose: true)
         
         pages.append(page1)
         pages.append(page2)

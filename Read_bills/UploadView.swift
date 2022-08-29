@@ -45,8 +45,10 @@ struct Home : View{
                     
                     if self.data.isEmpty{
                         GeometryReader{_ in
-                            VStack{
+                            VStack(alignment: .leading, spacing: 20){
+                                Spacer()
                                 Text("No Documents In Cloud !!!")
+                                Spacer()
                             }
                         }
                     }
@@ -153,7 +155,7 @@ struct CellView : View {
     
     var body : some View{
         HStack(spacing : 15){
-            Image(data.type == "image/jpeg" ? "pic" : "doc")
+            Image(data.type == "image/png" ? "pic" : "doc")
                 .resizable()
                 .renderingMode(.original)
                 .frame(width: 55, height: 55)
@@ -294,19 +296,21 @@ struct Loader : View {
     @State var show = false
     
     var body : some View{
-    
+        Spacer()
         Circle()
             .trim(from: 0, to: 0.8)
             .stroke(Color.blue, style:  StrokeStyle(lineWidth:4, lineCap: .round))
             .frame(width: 35, height: 35)
             .rotationEffect(.init(degrees: self.show ? 360: 0 ))
-            .animation(Animation.default.repeatForever(autoreverses: false).speed(1))
-            .padding(40)
+            .animation(_:Animation.default.repeatForever(autoreverses: false).speed(1))
+            .padding()
             .background(Color.white)
             .cornerRadius(15)
             .onAppear{
                 self.show.toggle()
             }
+            
+        Spacer()
         
     }
 }
