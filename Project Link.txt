@@ -1,0 +1,5 @@
+The Project Github Link: https://github.com/CCnocode/Read_bills
+
+Component: 1. Ios interface  2.NLP model 3. Example Billing source file.  4.PHP script.
+
+
